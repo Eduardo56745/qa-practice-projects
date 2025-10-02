@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "8485f7bc-ee3d-4933-bc66-326d2bdf779f",
+		"name": "JSONPlaceholder Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48957702",
+		"_collection_link": "https://lalox1697-8460885.postman.co/workspace/Eduardo-Ortega's-Workspace~bf87a359-f4a1-4119-82ed-52bd6a0ec3de/collection/48957702-8485f7bc-ee3d-4933-bc66-326d2bdf779f?action=share&source=collection_link&creator=48957702"
+	},
+	"item": [
+		{
+			"name": "Get all post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get post 1",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

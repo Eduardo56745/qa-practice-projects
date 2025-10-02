@@ -1,7 +1,21 @@
 # 🧪 QA Practice Projects  
 
-Este repositorio contiene ejercicios prácticos de **Quality Assurance (QA)** realizados como parte de mi aprendizaje y preparación para entrevistas.  
-Incluye pruebas **manuales de aplicación web (OpenCart)** y **pruebas de API (JSONPlaceholder)**.  
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green?logo=selenium)
+![Postman](https://img.shields.io/badge/Postman-API-orange?logo=postman)
+![MySQL](https://img.shields.io/badge/SQL-Validation-lightgrey?logo=mysql)
+
+Este repositorio contiene ejercicios prácticos de **Quality Assurance (QA)** realizados como parte de mi aprendizaje y preparación.  
+Incluye pruebas **manuales de aplicación web (OpenCart)**, **pruebas de API (JSONPlaceholder)**, **validaciones SQL** y **automatizaciones con Selenium**.  
+
+---
+
+## 📑 Tabla de Contenido
+- [📂 Contenido](#-contenido)
+- [🔹 OpenCart Tests (Web App)](#-opencart-tests-pruebas-funcionales--web-app)
+- [🌐 Postman Tests (API)](#-postman-tests-api--jsonplaceholder)
+- [💾 SQL Validations](#-sql-validations)
+- [🤖 Selenium Automation](#-selenium-automation-básico)
 
 ---
 
@@ -60,3 +74,57 @@ Se realizaron pruebas básicas de **CRUD** sobre el recurso `/posts`.
   "title": "Prueba QA",
   "body": "Este es un post de prueba"
 }
+
+```
+
+---
+
+## 💾 SQL Validations
+
+Ejemplos de consultas SQL básicas para validar datos en una base de datos:
+
+### Validar usuarios duplicados
+```SQL
+SELECT email, COUNT(*) 
+FROM users 
+GROUP BY email 
+HAVING COUNT(*) > 1;
+```
+### Validar productos sin precio asignado
+```SQL
+SELECT product_id, name 
+FROM products 
+WHERE price IS NULL OR price <= 0;
+```
+
+---
+
+## 🤖 Selenium Automation (Básico)
+
+Se añadieron scripts de **automatización UI con Selenium en Python**, como parte del aprendizaje en QA.
+
+### Script: `selenium/google_search.py`
+- Abre **Google**.
+- Busca **“laptops”**.
+- Hace clic en el primer resultado orgánico.
+- Imprime en consola el título y URL de la página abierta.
+
+> Nota: Google puede mostrar el mensaje *“I’m not a robot”* por medidas anti-bot. El script se deja como ejemplo de automatización básica.
+
+---
+
+### Script: `selenium/mercadolibre_search.py`
+- Abre **MercadoLibre México**.
+- Cierra el banner de cookies (si aparece).
+- Busca **“laptops”** en el buscador.
+- Espera la rejilla de resultados.
+- Imprime en consola el número de resultados visibles y el título del primero.
+
+Este script demuestra un flujo realista de automatización sobre un e-commerce.
+
+---
+
+## Conclusión
+
+Este repositorio reúne ejercicios prácticos de Quality Assurance que abarcan pruebas manuales, validaciones de API, consultas SQL y ejemplos de automatización con Selenium.
+Su objetivo es demostrar conocimientos fundamentales en QA funcional, pruebas de backend y automatización básica, aplicados en escenarios reales como e-commerce y consumo de APIs.

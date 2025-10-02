@@ -10,8 +10,6 @@ import time
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
-# Evita headless para reducir challenges anti-bot
-# options.add_argument("--headless=new")
 
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
@@ -33,7 +31,7 @@ try:
     # 1) Ir a MercadoLibre MX
     driver.get("https://www.mercadolibre.com.mx/")
 
-    # 2) Cerrar cookies si aparece (varios textos/ids posibles)
+    # 2) Cerrar cookies si aparece
     click_if_present([
         (By.XPATH, "//button[normalize-space()='Entendido']"),
         (By.XPATH,
@@ -41,7 +39,7 @@ try:
         (By.CSS_SELECTOR, "button#newCookieDisclaimerButton, button#onetrust-accept-btn-handler"),
     ], timeout=6)
 
-    # 3) Localizar el buscador (probamos varios selectores comunes)
+    # 3) Localizar el buscador
     search_box = None
     for by, sel in [
         # buscador principal en home
@@ -74,7 +72,7 @@ try:
     search_box.send_keys("laptops")
     search_box.send_keys(Keys.RETURN)
 
-    # 5) Esperar resultados (distintos layouts posibles)
+    # 5) Esperar resultados
     wait.until(EC.presence_of_element_located(
         (By.CSS_SELECTOR, ".ui-search-results, .ui-search-layout, ol.ui-search-layout")))
     result_items = driver.find_elements(
@@ -83,7 +81,7 @@ try:
     visible = [el for el in result_items if el.is_displayed()]
     print(f"✅ Resultados visibles para 'laptops': {len(visible)}")
 
-    # (Opcional) Tomar el título del primer resultado
+    # Tomar el título del primer resultado
     try:
         first_title = driver.find_element(
             By.CSS_SELECTOR, ".ui-search-item__title, h2.ui-search-item__title").text
